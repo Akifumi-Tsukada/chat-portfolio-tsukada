@@ -1,0 +1,45 @@
+.format {
+  width: 100%;
+  min-height: 100%;
+  overflow: hidden;
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  color: #696969;
+}
+
+.block {
+  margin: auto;
+}
+
+.explain {
+  align-items: left;
+}
+
+.login-deco {
+  width: 50%;
+  padding: 10px;
+  margin: 50px 10px;
+  background-color: #66cdaa;
+  border: 2px solid #98fb98;
+}
+
+.field {
+  width: 100%;
+  margin: 5px;
+}
+
+.text-field {
+  width: 90%;
+  margin: 5px;
+}
+
+.links {
+  align-items: center;
+  margin: auto;
+  text-decoration: underline;
+  color: #0645ad;
+}

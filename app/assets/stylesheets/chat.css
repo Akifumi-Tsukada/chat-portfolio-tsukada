@@ -1,0 +1,44 @@
+.chat-layout {
+  width: 50%;
+  min-height: 100%;
+  margin: auto;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.chat-menu {
+  display: block;
+  width: 100%;
+  align-items: right;
+}
+
+.chat-space {
+  display: block;
+  text-align: center;
+  width: 100%;
+  background-color: #f5f5f5;
+  border: 3px solid #db7093;
+}
+
+.submit {
+  display: block;
+  width: 100%;
+  border: 1px solid #4169e1;
+  align-items: center;
+  padding: 10px;
+}
+
+.member {
+  display: block;
+  font-size: 80%;
+  width: 100%;
+}
+
+.attention {
+  display: block;
+  font-size: 80%;
+  width: 100%;
+}

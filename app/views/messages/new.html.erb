@@ -1,27 +1,31 @@
-<h3>ミニチャットアプリ</h3>
-<div>
-  <%= "ようこそ！" %>
-  <%= link_to "#{current_user.name}さん", edit_user_path(current_user) %><br>
-  <%= link_to "ログアウト", destroy_user_session_path, method: :delete %>
-</div>
-<div>
-<p>
-<%= form_with model: @message do |f| %>
-  <%= f.text_field :text %>
-  <%= f.submit '送信' %>
-<% end %>
-</p>
-</div>
-<div>
-チャットメンバー : 
-  <% @users.each do |user| %>
-   <span><%= "#{user.name}さん" %></span>
-  <% end %>
-</div>
-<span>※メッセージの送信ユーザーを表示させたい場合はリロードしてください</span>
-<div id='messages'>
-  <% @messages.reverse_each do |message| %>
-    <p><%= message.text %><br>
-    <%= "-" + message.user.name + "さん"%></p>
-  <% end %>
+<div class="chat-layout">
+  <h3>ミニチャットアプリ</h3>
+  <div class="chat-menu">
+    <%= "ようこそ！" %>
+    <%= link_to "#{current_user.name}さん", edit_user_path(current_user), class: "links" %><br>
+    <%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: "links" %>
+  </div>
+  <div class="submit">
+    <p>
+    <%= form_with model: @message do |f| %>
+      <%= f.text_field :text, class: "text-field" %>
+      <%= f.submit '送信' %>
+    <% end %>
+    </p>
+  </div>
+  <div class="member">
+  チャットメンバー : 
+    <% @users.each do |user| %>
+    <span><%= "#{user.name}さん" %></span>
+    <% end %>
+  </div>
+  <div class="attention">
+    <span>※メッセージのみ非同期通信のため送信元ユーザーを表示する場合はリロードしてください</span>
+  </div>
+  <div id='messages' class="chat-space">
+    <% @messages.reverse_each do |message| %>
+      <p><%= message.text %><br>
+      <%= "-" + message.user.name + "さん"%></p>
+    <% end %>
+  </div>
 </div>
