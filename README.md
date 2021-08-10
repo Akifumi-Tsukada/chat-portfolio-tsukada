@@ -1,24 +1,57 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## アプリケーション名
+ミニチャットアプリ
 
-Things you may want to cover:
+## アプリケーション概要
+非同期通信でチャットをするミニアプリ
 
-* Ruby version
+## URL
+https://chat-portfolio-tsukada.herokuapp.com/
 
-* System dependencies
+## テスト用アカウント
+- ID: test1@test, Password: testuser1
+- ID: Email: test2@test, Password: testuser2
 
-* Configuration
+## 利用方法
+ユーザーでログインしテキストボックスからチャットを行う
 
-* Database creation
+## 目指した課題解決
+ブラウザ・サーバー双方向通信によるWebSocketを利用した非同期通信チャットの実現
 
-* Database initialization
+## 実装した機能
+- メッセージのみ非同期で通信処理を行う機能
+- メッセージを送信したユーザーを表示する機能
 
-* How to run the test suite
+## 実装予定の機能
+- 好きなテーマでチャットルームを作成し好みに合わせたカスタマイズが行える機能
+- ユーザーを限定せずにどこのルームでも発言ができる機能
 
-* Services (job queues, cache servers, search engines, etc.)
+## ローカルでの動作方法
+以下のコマンドを実行
+git clone https://github.com/Akifumi-Tsukada/chat-portfolio-tsukada
 
-* Deployment instructions
+# データベース設計
 
-* ...
+## users テーブル
+
+| Column    | Type    | Options     |
+| --------  | ------  | ----------- |
+| name      | string  | null: false |
+| email     | string  | null: false |
+| password  | string  | null: false |
+
+### Association
+
+- has_many :messages
+
+## messages テーブル
+
+| Column    | Type       | Options           |
+| --------  | ---------- | ----------------- |
+| text      | text       |                   |
+| user      | references | foreign_key: true |
+
+### Association
+
+- belongs_to :user
