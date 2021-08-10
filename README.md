@@ -27,6 +27,10 @@ https://chat-portfolio-tsukada.herokuapp.com/
 - 好きなテーマでチャットルームを作成し好みに合わせたカスタマイズが行える機能
 - ユーザーを限定せずにどこのルームでも発言ができる機能
 
+## ローカルでの動作方法
+以下のコマンドを実行
+git clone https://github.com/Akifumi-Tsukada/chat-portfolio-tsukada
+
 # データベース設計
 
 ## users テーブル
