@@ -4,14 +4,14 @@
 ミニチャットアプリ
 
 ## アプリケーション概要
-非同期通信でチャットをするミニアプリ
+非同期通信チャットのミニアプリ
 
 ## URL
 https://chat-portfolio-tsukada.herokuapp.com/
 
 ## テスト用アカウント
 - ID: test1@test, Password: testuser1
-- ID: Email: test2@test, Password: testuser2
+- ID: test2@test, Password: testuser2
 
 ## 利用方法
 ユーザーでログインしテキストボックスからチャットを行う
