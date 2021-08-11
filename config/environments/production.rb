@@ -5,6 +5,10 @@ Rails.application.configure do
   config.action_cable.url = "wss://chat-portfolio-tsukada.herokuapp.com/cable" 
   config.action_cable.allowed_request_origins = ['https://chat-portfolio-tsukada.herokuapp.com', 'http://chat-portfolio-tsukada.herokuapp.com']
 
+  ActionCable.server.config.disable_request_forgery_protection = true
+  config.action_cable.url = "ws://18.180.121.61/cable" 
+  config.action_cable.allowed_request_origins = ['http://18.180.121.61']
+
   # Code is not reloaded between requests.
   config.cache_classes = true
 
