@@ -12,6 +12,11 @@ class MessagesController < ApplicationController
     end
   end
 
+  def destroy_all
+    Message.destroy_all
+    redirect_to root_path
+  end
+
   private
 
   def message_params

@@ -3,7 +3,8 @@
   <div class="chat-menu">
     <%= "ようこそ！" %>
     <%= link_to "#{current_user.name}さん", edit_user_path(current_user), class: "links" %><br>
-    <%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: "links" %>
+    <%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: "links" %><br>
+    <br>
   </div>
   <div class="submit">
     <p>
@@ -13,14 +14,20 @@
     <% end %>
     </p>
   </div>
-  <div class="member">
+  <%#<div class="member">
   チャットメンバー : 
     <% @users.each do |user| %>
-    <span><%= "#{user.name}さん" %></span>
+    <%# <span><%= "#{user.name}さん" %><%# </span>
     <% end %>
-  </div>
+  <%# </div> %>
   <div class="attention">
-    <span>※メッセージのみ非同期通信のため送信元ユーザーを表示する場合はリロードしてください</span>
+    <br>
+    <p><span>※メッセージのみ非同期通信のため送信元ユーザーを表示する場合はリロードしてください。</span></p>
+    <p><span>※荒らし対策のためメッセージの全削除を行うと発言したユーザーも全削除されます。ご注意ください。</span></p>
+    <p>
+    <%= button_to "メッセージをすべて削除", destroy_all_messages_path, method: :delete %>
+    </p>
+    <br>
   </div>
   <div id='messages' class="chat-space">
     <% @messages.reverse_each do |message| %>
