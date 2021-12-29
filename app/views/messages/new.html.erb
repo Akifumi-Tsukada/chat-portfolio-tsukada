@@ -1,18 +1,26 @@
 <div class="chat-layout">
-  <h3>ミニチャットアプリ</h3>
+  <h3>チャットアプリ</h3>
   <div class="chat-menu">
-    <%= "ようこそ!" %>
+    <%= "ようこそ" %>
     <%= link_to "#{current_user.name}さん", edit_user_path(current_user), class: "links" %><br>
     <%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: "links" %><br>
     <br>
   </div>
+  <div class="attention">
+    <p><span>※下のボタンは荒らし対策のために設置した機能です。ユーザー、メッセージの全てのデータが削除されます。</span></p>
+    <p><%= button_to "すべてのデータを削除", destroy_all_users_path, method: :delete %></p>
+    <br>
+  </div>
   <div class="submit">
-    <p>
-    <%= form_with model: @message do |f| %>
-      <%= f.text_field :text, class: "text-field" %>
-      <%= f.submit '送信' %>
-    <% end %>
-    </p>
+    <div class="submit-field">
+      <p><%= "発言欄" %></p>
+      <p>
+      <%= form_with model: @message do |f| %>
+        <%= f.text_field :text, class: "text-field" %>
+        <%= f.submit '送信' %>
+      <% end %>
+      </p>
+    </div>
   </div>
   <div class="member">
   チャットメンバー : 
@@ -20,19 +28,13 @@
     <span><%= "#{user.name}さん" %></span>
     <% end %>
   </div>
-  <div class="attention">
-    <br>
-    <p><span>※メッセージのみ非同期通信のため送信元ユーザーを表示する場合はリロードしてください。</span></p>
-    <p><span>※下のボタンは荒らし対策のために設置した機能です。ユーザー、メッセージの全てのデータが削除されます。</span></p>
-    <p>
-    <%= button_to "すべてのデータを削除", destroy_all_users_path, method: :delete %>
-    </p>
-    <br>
-  </div>
+  <br>
   <div id='messages' class="chat-space">
     <% @messages.reverse_each do |message| %>
-      <p><%= message.text %><br>
-      <%= "-" + message.user.name + "さん"%></p>
+      <div class="chat-message">
+        <p><%= message.text %></p>
+        <p><%= " - " + message.user.name + "さん"%></p>
+      </div>
     <% end %>
   </div>
 </div>
